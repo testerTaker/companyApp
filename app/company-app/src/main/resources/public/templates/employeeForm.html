@@ -1,0 +1,27 @@
+<form  name="employeeForm" ng-submit="ctrl.save_form(employeeForm.$valid)" novalidate>
+    <p ng-show="ctrl.saved_with_success" class="message-success"> Your data was successfully saved =)</p>
+    <p ng-show="ctrl.has_errors" class="message-error"> Some error ocurred while processing the request, sorry about that =(</p>
+    <p ng-show="ctrl.fetching" class="message-info">Wait a second, fetching your data </p>
+    <label for="name">Name *</label>
+    <input  ng-disabled="ctrl.fetching" type="text" name="name" ng-model="ctrl.employee.name"  required>
+    <p ng-show="employeeForm.name.$invalid && !employeeForm.name.$pristine" class="help-block">Name is required.</p>
+    <br>
+    <label for="email">Email *</label> 
+    <input  ng-disabled="ctrl.fetching" type="email" name="email" ng-model="ctrl.employee.email" required>
+    <p ng-show="employeeForm.email.$invalid && !employeeForm.email.$pristine" class="help-block">Email should be valid and is required</p>
+
+    <br>
+    <label>
+        <input type="radio" ng-model="ctrl.employee.is_owner"  name="owner" value="1">
+        Owner
+    </label>
+    <label>
+        <input type="radio" ng-model="ctrl.employee.is_owner"  name="owner" value="0">
+        Employee
+    </label>
+    
+    <input type="hidden" name="id" ng-model="ctrl.employee.id">
+    <br>
+    <input type="submit"  value="Save" ng-disabled="ctrl.processing">
+</form>
+<a href="#listEmployees/{{ctrl._companyId}}" ng-show="ctrl._companyId">List employees</a>

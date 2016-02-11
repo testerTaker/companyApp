@@ -1,0 +1,38 @@
+table{
+    border-collapse: collapse;
+
+}
+th{
+    padding:1em;
+}
+tr,td {
+    border: 1px solid;
+    padding:1em;
+}
+a,a:hover,a:visited{
+    font-weight: bold;
+    text-decoration: none;
+    color:#333377;
+}
+.message-success, .message-errror,.message-info{
+    font-weight: bold;
+    padding:1em;
+}
+.message-success{
+    color:#224422;
+}
+.message-info{
+    color:#222266;
+}
+.message-error{
+    color:#FF4422;
+}
+.help-block{
+    font-weight: bold;
+    text-align: center;
+    color:#FF4422;
+}
+#wrapper{
+    width: 80%;
+    margin:0 auto;
+}

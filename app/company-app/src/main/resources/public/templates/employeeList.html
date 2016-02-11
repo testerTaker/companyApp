@@ -1,0 +1,21 @@
+<p ng-show="ctrl.has_errors" class="message-error"> Some error ocurred while processing the request, sorry about that =(</p>
+<p ng-show="ctrl.fetching" class="message-info">Wait a second, fetching your data </p>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Actions</th>
+
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in ctrl.employees">
+            <td>{{::employee.id}}</td>
+            <td>{{::employee.name}}</td>
+            <td>{{::employee.email}}</td>
+            <td>{{::employee.is_owner ? "Owner" :"Employee"}} </td>
+            <th><a href="#editEmployee/{{::employee.id}}">Edit</a> </th>
+        </tr>
+    </tbody>
+</table>

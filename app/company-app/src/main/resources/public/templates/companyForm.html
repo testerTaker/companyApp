@@ -1,0 +1,34 @@
+<form  name="companyForm" ng-submit="ctrl.save_form(companyForm.$valid)" novalidate>
+    <p ng-show="ctrl.saved_with_success" class="message-success"> Your data was successfully saved =)</p>
+    <p ng-show="ctrl.has_errors" class="message-error"> Some error ocurred while processing the request, sorry about that =(</p>
+    <p ng-show="ctrl.fetching" class="message-info">Wait a second, fetching your data </p>
+    <label for="name">Name *</label>
+    <input  ng-disabled="ctrl.fetching" type="text" name="name" ng-model="ctrl.company.name"  required>
+    <p ng-show="companyForm.name.$invalid && !companyForm.name.$pristine" class="help-block">Name is required.</p>
+    <br>
+    <label for="address">Address *</label>
+    <input  ng-disabled="ctrl.fetching" type="text" name="address" ng-model="ctrl.company.address"  required>
+    <p ng-show="companyForm.address.$invalid && !companyForm.address.$pristine" class="help-block">Address is required.</p>
+
+    <br>
+    <label for="city">City *</label>
+    <input  ng-disabled="ctrl.fetching" type="text" name="city" ng-model="ctrl.company.city"  required>
+    <p ng-show="companyForm.city.$invalid && !companyForm.city.$pristine" class="help-block">City is required.</p>
+
+    <br>
+    <label for="country">Country *</label>
+    <input  ng-disabled="ctrl.fetching" type="text" name="country" ng-model="ctrl.company.country"  required>
+    <p ng-show="companyForm.country.$invalid && !companyForm.country.$pristine" class="help-block">Country is required.</p>
+
+    <br>
+    <label for="email">Email</label>
+    <input  ng-disabled="ctrl.fetching" type="email" name="email" ng-model="ctrl.company.email">
+    <p ng-show="companyForm.email.$invalid && !companyForm.email.$pristine" class="help-block">Email should be valid.</p>
+
+    <br>
+    <label for="phone">Phone</label>
+    <input ng-disabled="ctrl.fetching"  type="text" name="phone" ng-model="ctrl.company.phone">
+    <input type="hidden" name="id" ng-model="ctrl.company.id">
+    <br>
+    <input type="submit"  value="Save" ng-disabled="ctrl.processing">
+</form>
