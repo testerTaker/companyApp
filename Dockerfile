@@ -18,5 +18,5 @@ RUN ["mvn", "verify"]
 ADD ./app/company-app/src /code/src
 RUN ["mvn", "package"]
 
-EXPOSE 4567
-CMD ["java", "-jar", "target/companyApp-jar-with-dependencies.jar"]
+# EXPOSE 4567
+# CMD ["java", "-jar", "target/companyApp-jar-with-dependencies.jar"]
