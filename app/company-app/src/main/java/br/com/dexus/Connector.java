@@ -13,7 +13,7 @@ import java.sql.Statement;
 public class Connector{
     public static Connection getConnection() 
     {
-        return getConnection("/db/base.db");
+        return getConnection("/app/user/base.db");
     }
     public static Connection getConnection(String dbName) 
     {
